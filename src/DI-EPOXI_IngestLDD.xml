@@ -1,0 +1,1516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1Q00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1Q00.xsd">
+    <name>Deep Impact and EPOXI Missions Dictionary</name>
+    <ldd_version_id>1.0.0.0</ldd_version_id>
+    <dictionary_type>Mission</dictionary_type>
+    <full_name>Anne Raugh</full_name>
+    <steward_id>sbn</steward_id>
+    <namespace_id>di</namespace_id>
+    <comment>
+        Created as part of the PDS3 to PDS4 conversion of the Deep Impact, 
+        EPOCh, and DIXI mission archives.
+    </comment>
+    <last_modification_date_time>2026-10-09</last_modification_date_time>
+    
+    <!-- Attributes (alphabetical) -->
+    
+    <DD_Attribute>
+        <name>adc_saturated_pixel_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>adc_saturated_pixel_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:adc_saturated_pixel_count provides a count of the number of
+            pixels where the analog-to-digital converter (ADC) was saturated.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>bad_pixel_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>bad_pixel_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:bad_pixel_count attribute provides a count of the number of bad pixels
+            as identified by the Deep Impact calibration process.  This count
+            includes any VIS overclock pixels or IR reference pixels at the borders
+            of the image.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>commanded_image_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>commanded_image_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:commanded_image_count provides the number of images intended
+            to be acquired acquired by the imaging command that resulted in
+            the associated data product.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>1</minimum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>data_to_calibrated_dn_multiplier</name>
+        <version_id>1.0</version_id>
+        <local_identifier>data_to_calibrated_dn_multiplier</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:data_to_calibrated_dn_multipler provides the scaling factor for
+            converting the image data from the currently specified unit to calibrated
+            data numbers (DN), before the conversion to radiance units.  A value of 
+            1 indicates the current image is already in units of raw data number.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>data_to_ioverf_multiplier</name>
+        <version_id>1.0</version_id>
+        <local_identifier>data_to_ioverf_multiplier</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:data_to_ioverf_multiplier provides the scaling factor for
+            converting the image data from the currently specified unit to unitless
+            I-over-F data.  A value of 1 indicates the current image is already in
+            units of I-over-F.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>data_to_radiance_multiplier</name>
+        <version_id>1.0</version_id>
+        <local_identifier>data_to_radiance_multiplier</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:data_to_radiance_multiplier provides the scaling factor for
+            converting the image data from the currently specified unit to radiance
+            data, W/(m**2*micron*sr).  A value of 1 indicates the current image is
+            already in units of radiance.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>despiked_pixel_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>despiked_pixel_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:despiked_pixel_count provides a count of the number of pixels
+            that were modified by the despiking routine in the calibration pipeline.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>geometry_quality</name>
+        <version_id>1.0</version_id>
+        <local_identifier>geometry_quality</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:geometry_quality_flag indicates the quality of the calculated
+            geometric parameters.  A value of BAD indicates some or all values could
+            not be calculated or the values may not be accurate and should be used
+            with caution.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>BAD</value>
+                <value_meaning>
+                    Some or all of the associated geometric values could not be
+                    calculated, or the values may not be accurate and should be
+                    used with caution.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>OK</value>
+                <value_meaning>
+                    The associated geometric values are considered accurate and
+                    reliable.
+                </value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>image_compression_history</name>
+        <version_id>1.0</version_id>
+        <local_identifier>image_compression_history</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:image_compression_history attribute indicates whether the associated
+            iamge data were compressed aboard the spacecraft, and if so, whether they
+            are still in that compressed state.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>Compressed</value>
+                <value_meaning>
+                    The image was compressed onboard the spacecraft and archived in 
+                    that compressed form.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Decompressed</value>
+                <value_meaning>
+                    The image was compressed onboard the spacecraft and then 
+                    decompressed as part of calibration.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Uncompressed</value>
+                <value_meaning>
+                    The image was never compressed onboard the spacecraft.
+                </value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>image_number</name>
+        <version_id>1.0</version_id>
+        <local_identifier>image_number</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:image_number provides the sequential number for an image
+            within an observation. For EPOXI data, multiple images could 
+            have been associated with a single di:observation_id.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>1</minimum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>instrument_mode</name>
+        <version_id>1.0</version_id>
+        <local_identifier>instrument_mode</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:instrument_mode attribute provides the human-readable expansion
+            of the di:instrument_mode_mnemonic field, and corresponds to the
+            di:instrument_mode_id for the particular instrument.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            
+            
+            <DD_Permissible_Value>
+                <value>Full Frame (shuttered)</value>
+                <value_meaning>CCD Mode 1 - Full Frame (shuttered)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Sub-Frame 1 (shuttered)</value>
+                <value_meaning>CCD Mode 2 - Sub-Frame 1 (shuttered)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Sub-Frame 2 (shuttered)</value>
+                <value_meaning>CCD Mode 3 - Sub-Frame 2 (shuttered)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Sub-Frame 2 (unshuttered)</value>
+                <value_meaning>CCD Mode 4 - Sub-Frame 2 (unshuttered)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Sub-Frame 3 (shuttered)</value>
+                <value_meaning>CCD Mode 5 - Sub-Frame 3 (shuttered)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Sub-Frame 3 (unshuttered)</value>
+                <value_meaning>CCD Mode 6 - Sub-Frame 3 (unshuttered)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Sub-Frame 4 (unshuttered), one parallel overclock row</value>
+                <value_meaning>CCD Mode 7 - Sub-Frame 4 (unshuttered), one parallel overclock row</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Sub-Frame 4 (unshuttered), no parallel overclock row</value>
+                <value_meaning>CCD Mode 8 - Sub-Frame 4 (unshuttered), no parallel overclock row</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Diagnostic (shuttered)</value>
+                <value_meaning>CCD Mode 9 - Diagnostic (shuttered)</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+                <value>Binned Full Frame</value>
+                <value_meaning>HRI Spectrometer Mode 1 - Binned Full Frame</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Binned Sub_Frame 1</value>
+                <value_meaning>HRI Spectrometer Mode 2 - Binned Sub_Frame 1</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Binned Sub-Frame 2</value>
+                <value_meaning>HRI Spectrometer Mode 3 - Binned Sub-Frame 2</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Un-binned Full Frame</value>
+                <value_meaning>HRI Spectrometer Mode 4 - Un-binned Full Frame</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Alternating Binned Full Frame</value>
+                <value_meaning>HRI Spectrometer Mode 5 - Alternating Binned Full Frame</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Diagnostic: One reset frame followed by a read frame</value>
+                <value_meaning>HRI Spectrometer Mode 6 - Diagnostic: One reset frame followed by a read frame</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Memory Check</value>
+                <value_meaning>HRI Spectrometer Mode 7 - Memory Check</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>instrument_mode_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>instrument_mode_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:instrument_mode_id is a number indicating the operating mode
+            of the instrument during the associated observation. It corresponds
+            to the instrument_mode_mnemonic and the instrument_mode. Instrument
+            modes for the CCD instruments (HRIV, MRI, and ITS) are all the same.
+            The HRII spectrometer has its own set of modes.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>1</minimum_value>
+            <maximum_value>9</maximum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>instrument_mode_mnemonic</name>
+        <version_id>1.0</version_id>
+        <local_identifier>instrument_mode_mnemonic</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:instrument_mode_mnemonic corresponds to the di:instrument_mode_id
+            and the di:instrument_mode, which should also be present. The CCD 
+            instruments (HTIV, MRI, and ITS) all use the same set of mode IDs,
+            mnemonics, and names. The HRII spectrometer has its own set. The 
+            instrument modes were identical for primary and extended missions.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            
+            <DD_Permissible_Value>
+                <value>FF</value>
+                <value_meaning>CCD Mode 1 - Full Frame (shuttered)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SF1</value>
+                <value_meaning>CCD Mode 2 - Sub-Frame 1 (shuttered)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SF2S</value>
+                <value_meaning>CCD Mode 3 - Sub-Frame 2 (shuttered)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SF2N</value>
+                <value_meaning>CCD Mode 4 - Sub-Frame 2 (unshuttered)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SF3S</value>
+                <value_meaning>CCD Mode 5 - Sub-Frame 3 (shuttered)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SF3N</value>
+                <value_meaning>CCD Mode 6 - Sub-Frame 3 (unshuttered)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SF4O</value>
+                <value_meaning>CCD Mode 7 - Sub-Frame 4 (unshuttered), one parallel overclock row</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SF4NO</value>
+                <value_meaning>CCD Mode 8 - Sub-Frame 4 (unshuttered), no parallel overclock row</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>FFD</value>
+                <value_meaning>CCD Mode 9 - Diagnostic (shuttered)</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+                <value>BINFF</value>
+                <value_meaning>HRI Spectrometer Mode 1 - Binned Full Frame</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>BINSF1</value>
+                <value_meaning>HRI Spectrometer Mode 2 - Binned Sub_Frame 1</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>BINSF2</value>
+                <value_meaning>HRI Spectrometer Mode 3 - Binned Sub-Frame 2</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>UBFF</value>
+                <value_meaning>HRI Spectrometer Mode 4 - Un-binned Full Frame</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>ALTFF</value>
+                <value_meaning>HRI Spectrometer Mode 5 - Alternating Binned Full Frame</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DIAG</value>
+                <value_meaning>HRI Spectrometer Mode 6 - Diagnostic: One reser frame followed by a read frame</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>MEMCHK</value>
+                <value_meaning>HRI Spectrometer Mode 7 - Memory Check</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>interpolated_pixel_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>interpolated_pixel_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:interpolated_pixel_count provides a count of the number of
+            pixels that were reclaimed, in the calibration pipeline, by interpolating
+            from the values of neighgboring good pixels.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>missing_pixel_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>missing_pixel_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:missing_pixel_count provides a count of the number of pixels
+            that were not received from the spacecraft and pixels that are the image
+            header bytes.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>mission_activity</name>
+        <version_id>1.0</version_id>
+        <local_identifier>mission_activity</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:mission_activity attribute provides a human-readable
+            tag for the context of an observation (for example, "Daily 
+            Science Imaging").
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>mission_phase_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>mission_phase_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:mission_phase_name is the name of a specific mission phase, 
+            as defined in the mission documentation.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>observation_description</name>
+        <version_id>1.0</version_id>
+        <local_identifier>observation_description</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:observation_description provides a brief, human-readable description
+            elucidating the di:observation_id value. This corresponds to the
+            PDS3 keyword OBSERVATION_TYPE.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>observation_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>observation_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACT</submitter_name>
+        <definition>
+            The di:observation_id is a numeric string identifying a specific 
+            calibration-related or scientific observation.
+            A single 'observation' may consist of more than one image (the di:image_number provides
+            the sequence number within the observation for a specific image). In the EPOXI missions,
+            a calibration sequence was often reused, so that the same observation_id might appear 
+            more than once within a data collection.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <minimum_characters>1</minimum_characters>
+            <maximum_characters>7</maximum_characters>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>partial_saturated_pixel_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>partial_saturated_pixel_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:partial_saturated_pixel_count provides a count of the number
+            of pixels where the raw DN value is above the point where some pixels
+            have reached partial saturation.  For the VIS CCD instruments this
+            point occurs at 11,000 raw DN and at 8,000 raw DN for the HRII IR
+            spectrometer.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>pointing_description</name>
+        <version_id>1.0</version_id>
+        <local_identifier>pointing_description</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:pointing_desc provides the planned spacecraft pointing as
+            described in an imaging sequence.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>product_type</name>
+        <version_id>1.0</version_id>
+        <local_identifier>product_type</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:product_type attribute provides a categorization for the data product based 
+            on its state of reduction.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>Edited Data Record</value>
+                <value_meaning>
+                    The associated data product is an Edited (or 'Experiment') Data 
+                    Record (EDR). This is the product_type associated with raw data. 
+                    The data are in a format suitable for analysis, but no processing
+                    or calibration has been performed. This corresponds to CODMAC 
+                    level 2 edited data.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Radiance Reversible</value>
+                <value_meaning>
+                    The associated data product has been processed to radiance values in 
+                    a method that is reversible - specifically, the processing did not 
+                    include cleaning (removing cosmic rays, interpolating over bad pixels,
+                    etc.). This corresponds to CODMAC level 3 calibrated data.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Radiance Cleaned</value>
+                <value_meaning>
+                    The associated data product has been cleaned (cosmic ray hits removed,
+                    interpolation over bad pixels, etc.) and processed to radiance values. 
+                    Because of the cleaning applied, this calibration is not reversible. 
+                    This corresponds to CODMAC level 4 calibrated/resampled data.
+                </value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>saturated_pixel_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>saturated_pixel_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:saturated_pixel_count provides a count of the number
+            of pixels where the raw DN value is above the point where some pixels
+            have reached full-well saturation.  For the VIS CCD instruments this
+            point occurs 15,000 raw DN and at 11,000 raw DN for the HRII IR
+            spectrometer.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>scaled_maximum</name>
+        <version_id>1.0</version_id>
+        <local_identifier>scaled_maximum</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:scaled_maximum indicates the largest value occurring within the
+            image itself after the application of any scaling factor and offset. 
+            In the final DI/EPOXI pipelines, pixels in the overclock areas bordering 
+            the VIS CCDs or pixels in the reference rows and columns bordering the 
+            HRI IR spectrometer are included in the image object but are excluded 
+            from the value. Values are stated as real numbers regardless of the data 
+            type of the elements of the associated image.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>scaled_median</name>
+        <version_id>1.0</version_id>
+        <local_identifier>scaled_median</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:scaled_median provides the median value (middle value)
+            occurring in the image itself after the application of any scaling factor 
+            and offset. In the final DI/EPOXI pipeline, pixels in the overclock areas 
+            bordering the VIS CCDs or pixels in the reference rows and columns bordering 
+            the HRI IR spectrometer are included in the image object but are excluded 
+            from the value. Values are stated as real numbers regardless of the data 
+            type of the elements of the associated image.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>scaled_minimum</name>
+        <version_id>1.0</version_id>
+        <local_identifier>scaled_minimum</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:scaled_minimum indicates the smallest value occurring in the
+            image itself after the application of any scaling factor and offset. 
+            In the final DI/EPOXI pipeline, pixels in the overclock 
+            areas bordering the VIS CCDs or pixels in the reference rows and 
+            columns bordering the HRI IR spectrometer are included in the image
+            object but are excluded from the value. Values are stated as real 
+            numbers regardless of the data type of the elements of the associated 
+            image.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>scaled_standard_deviation</name>
+        <version_id>1.0</version_id>
+        <local_identifier>scaled_standard_deviation</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:scaled_standard_deviation provides the standard deviation
+            occurring in the image itself after the application of any scaling factor
+            and offset. In the final DI/EPOXI pipeline, pixels in the overclock areas 
+            bordering the VIS CCDs or pixels in the reference rows and columns bordering 
+            the HRI IR spectrometer are included in the image object but are excluded 
+            from the value. Values are stated as real numbers regardless of the data 
+            type of the elements of the associated image.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>sdc_pipeline_file_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>sdc_pipeline_file_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:sdc_pipeline_file_name provides the original file name used by the EPOXI Science Data Center (SDC) pipeline and typically used in
+            publications; the project elected to use shorter file names for the PDS archive. The formation rule for this element is iicccccccccc_eeeeeee_nnn_rr.FIT where ii identifies the instrument
+            (HV=HRIV,HI=HRII,MV=MRI,IV=ITS), cccccccccc is the spacecraft clock count at the mid-point of the observation, eeeeeee is the exposure ID
+            (OBSERVATION_ID in data labels), nnn provides the sequentially increasing image number within an exposure ID (IMAGE_NUMBER in the data
+            labels), and rr identifies the type of reduction (no string = raw DN, RADREV = reversibly calibrated in radiance units, RAD = irreversibly calibrated in radiance units, IFREV = reversibly calibrated I/F
+            (unitless), IF = irreversibly calibrated I/F (unitless).
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_File_Name</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>sensor_location</name>
+        <version_id>1.0</version_id>
+        <local_identifier>sensor_location</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:sensor_location is the string provided in the original PDS3 label,
+            which in turn was extracted from comments in the FITS header of the 
+            file, that briefly describes where a particular temperature or 
+            voltage sensor was located.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>spacecraft_clock_mid</name>
+        <version_id>1.0</version_id>
+        <local_identifier>spacecraft_clock_mid</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:spacecraft_clock_mid gives the spacecraft clock reading
+            at the midpoint of an interval. The format and interpretation
+            of the spacecraft clock string varies from mission to mission.
+            The Deep Impact Flyby spacecraft clock is represented as a 
+            string of the format '1/0123456789.123'.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <pattern>1\/[0-9]{10}\.[0-9]{3}</pattern>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>spacecraft_clock_start</name>
+        <version_id>1.0</version_id>
+        <local_identifier>spacecraft_clock_start</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:spacecraft_clock_start gives the spacecraft clock reading
+            at the beginning of an interval. The format and interpretation
+            of the spacecraft clock string varies from mission to mission.
+            The Deep Impact Flyby spacecraft clock is represented as a 
+            string of the format '1/0123456789.123'.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <pattern>1\/[0-9]{10}\.[0-9]{3}</pattern>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>spacecraft_clock_stop</name>
+        <version_id>1.0</version_id>
+        <local_identifier>spacecraft_clock_stop</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACT</submitter_name>
+        <definition>
+            The di:spacecraft_clock_stop gives the spacecraft clock reading
+            at the end of an interval. The format and interpretation of
+            the spacecraft clock string varies from mission to mission.
+            The Deep Impact Flyby spacecraft clock is represented as a 
+            string of the format '1/0123456789.123'.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <pattern>1\/[0-9]{10}\.[0-9]{3}</pattern>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>spacecraft_processor_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>spacecraft_processor_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:spacecraft_processor_id attribute identifies which of two
+            onboard processors was user ti acquire and record the associated
+            observation.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>SCU-A</value>
+                <value_meaning>
+                    The 'A' processor was used to obtain the data.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SCU-B</value>
+                <value_meaning>
+                    The 'B' processor was used to obtain the data.
+                </value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>stored_maximum</name>
+        <version_id>1.0</version_id>
+        <local_identifier>stored_maximum</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:stored_maximum indicates the largest value occurring within the
+            the stored pixel values of the image itself. In the final DI/EPOXI 
+            pipelines, pixels in the overclock areas bordering the VIS CCDs or pixels 
+            in the reference rows and columns bordering the HRI IR spectrometer are 
+            included in the image object but are excluded from the value. Values are 
+            stated as real numbers regardless of the data type of the elements of the 
+            associated image.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>stored_median</name>
+        <version_id>1.0</version_id>
+        <local_identifier>stored_median</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:stored_median provides the median value (middle value) occurring
+            within the stored pixels of the image itself. In the final DI/EPOXI pipeline,
+            pixels in the overclock areas bordering the VIS CCDs or pixels in the
+            reference rows and columns bordering the HRI IR spectrometer are
+            included in the image object but are excluded from the value.
+            Values are stated as real numbers regardless of the data type of the 
+            elements of the associated image.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>stored_minimum</name>
+        <version_id>1.0</version_id>
+        <local_identifier>stored_minimum</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:stored_minimum indicates the smallest value occurring in the stored 
+            pixels of the image itself. In the final DI/EPOXI pipeline, pixels in the 
+            overclock areas bordering the VIS CCDs or pixels in the reference rows and 
+            columns bordering the HRI IR spectrometer are included in the image
+            object but are excluded from the value. Values are stated as real 
+            numbers regardless of the data type of the elements of the associated 
+            image.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>stored_standard_deviation</name>
+        <version_id>1.0</version_id>
+        <local_identifier>stored_standard_deviation</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:stored_standard_deviation provides the standard deviation of the
+            values occurring in the stored pixels of the image itself. In the final 
+            DI/EPOXI pipeline, pixels in the overclock areas bordering the VIS CCDs or 
+            pixels in the reference rows and columns bordering the HRI IR spectrometer 
+            are included in the image object but are excluded from the value. Values 
+            are stated as real numbers regardless of the data type of the elements of 
+            the associated image.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>temperature</name>
+        <version_id>1.0</version_id>
+        <local_identifier>temperature</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACT</submitter_name>
+        <definition>
+            di:temperature is the temperature reported by the associated 
+            sensor, indicated by the accompanying di:sensor_location.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>ultracompressed_pixel_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>ultracompressed_pixel_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:ultracompressed_pixel_count provides a count of the number
+            of pixels where the raw DN is in a compression bin so large that the
+            resulting value contains very little information.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>voltage</name>
+        <version_id>1.0</version_id>
+        <local_identifier>voltage</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            di:voltage is the voltage reported by the associated 
+            sensor, indicated by the accompanying di:sensor_location.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Voltage</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>x_axis_rotation</name>
+        <version_id>1.0</version_id>
+        <local_identifier>x_axis_rotation</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:x_axis_rotation attributed provides the rate of rotation about the
+            X-axis of the spacecraft.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>y_axis_rotation</name>
+        <version_id>1.0</version_id>
+        <local_identifier>y_axis_rotation</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:y_axis_rotation attributed provides the rate of rotation about the
+            Y-axis of the spacecraft.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>z_axis_rotation</name>
+        <version_id>1.0</version_id>
+        <local_identifier>z_axis_rotation</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:z_axis_rotation attributed provides the rate of rotation about the
+            Z-axis of the spacecraft.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <!-- ########################################################################### -->
+    
+    <!-- Classes -->
+    
+    <DD_Class>
+        <name>Conversion_Constants</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Conversion_Constants</local_identifier>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:Conversion_Constants class provides multiplicative constants for
+            transforming pixel values in the associated image from their current
+            units to other units.
+        </definition>
+        
+        <DD_Association>
+            <identifier_reference>data_to_calibrated_dn_multiplier</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>data_to_ioverf_multiplier</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>data_to_radiance_multiplier</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Geometry</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Geometry</local_identifier>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:Geometry class provides additional geometry information not
+            accommodated by the Geometry discipline namespace.
+        </definition>
+        
+        <DD_Association>
+            <identifier_reference>pointing_description</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>geometry_quality</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Spacecraft_Rotation_Velocity_Vector</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+    <DD_Class>
+        <name>Imaging</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Imaging</local_identifier>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:Imaging class contains attributes related
+            to the sequence that produced the data comprising the
+            product observation.
+        </definition>
+        
+        <DD_Association>
+            <identifier_reference>image_number</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>commanded_image_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>image_compression_history</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>        
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Image_Statistics</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Image_Statistics</local_identifier>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:Image_Statistics class provides various counts, metrics and
+            conversion constants for the image contained within the primary data
+            object.
+        </definition>
+        
+        <DD_Association>
+            <identifier_reference>bad_pixel_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>missing_pixel_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>despiked_pixel_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>interpolated_pixel_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>partial_saturated_pixel_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>saturated_pixel_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>adc_saturated_pixel_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>ultracompressed_pixel_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>scaled_maximum</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>scaled_minimum</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>scaled_median</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>scaled_standard_deviation</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>stored_maximum</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>stored_minimum</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>stored_median</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>stored_standard_deviation</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        
+        <DD_Association>
+            <identifier_reference>Conversion_Constants</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Instrument_Parameters</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Instrument_Parameters</local_identifier>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:Instrument_Parameters class provides attributes specific to 
+            instrument settings and environment.
+        </definition>
+        
+        <DD_Association>
+            <identifier_reference>instrument_mode</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>instrument_mode_mnemonic</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>instrument_mode_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        
+        <DD_Association>
+            <identifier_reference>Instrument_Temperatures</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Instrument_Voltages</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Instrument_Temperatures</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Instrument_Temperatures</local_identifier>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:Instrument_Temperatures class contains a list of reported
+            temperature measurements from specific sensors located in various 
+            places in the spacecraft hardware.
+        </definition>
+        
+        <DD_Association>
+            <identifier_reference>Temperature_Measurement</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+    <DD_Class>
+        <name>Instrument_Voltages</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Instrument_Voltages</local_identifier>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:Instrument_Voltages class contains a list of reported
+            voltage measurements from specific sensors located in various 
+            places in the spacecraft hardware.
+        </definition>
+        
+        <DD_Association>
+            <identifier_reference>Voltage_Measurement</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Observation_Parameters</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Observation_Parameters</local_identifier>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:Observation_Parameters class contains details specific to the observations
+            comprising the data product, including planning and commanding attributes,
+            and additional pointing information not covered by the Geometry discipline
+            classes.
+        </definition>
+        
+        <DD_Association>
+            <identifier_reference>observation_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>observation_description</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>mission_activity</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>product_type</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>spacecraft_processor_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>sdc_pipeline_file_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        
+        <DD_Association>
+            <identifier_reference>Imaging</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        
+        <DD_Association>
+            <identifier_reference>Geometry</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Spacecraft_Rotation_Velocity_Vector</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Spacecraft_Rotation_Velocity_Vector</local_identifier>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            TBD: Waiting on response
+        </definition>
+        
+        <DD_Association>
+            <identifier_reference>x_axis_rotation</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>y_axis_rotation</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>z_axis_rotation</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Temperature_Measurement</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Temperature_Measurement</local_identifier>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:Temperature_Measurement class reports a single 
+            temperature reading by a specific sensor.
+        </definition>
+        
+        <DD_Association>
+            <identifier_reference>sensor_location</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>temperature</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Voltage_Measurement</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Voltage_Measurement</local_identifier>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:Voltage_Measurement class reports a single
+            voltage reading by a specific sensor.
+        </definition>
+        
+        <DD_Association>
+            <identifier_reference>sensor_location</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>voltage</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- Wrapper Class -->
+    
+    <DD_Class>
+        <name>Mission_Parameters</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Mission_Parameters</local_identifier>
+        <submitter_name>ACR</submitter_name>
+        <definition>
+            The di:Mission_Parameters class is the container class for the subclasses
+            comprising the namespace shared by the Deep Impact and EPOXI missions.
+        </definition>
+        <element_flag>true</element_flag>
+
+        <DD_Association>
+            <identifier_reference>mission_phase_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>spacecraft_clock_start</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>spacecraft_clock_mid</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>spacecraft_clock_stop</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        
+        <DD_Association>
+            <identifier_reference>Observation_Parameters</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Instrument_Parameters</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Image_Statistics</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+</Ingest_LDD>

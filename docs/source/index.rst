@@ -15,9 +15,16 @@ Example Namespace Documentation
 
     user/user-guide
 
-    
 .. toctree::
     :maxdepth: 3
     :caption: Detailed Documentation
 
-    detailed/example
+    detailed/outline
+    detailed/classList
+    detailed/attributeList
+    
+.. toctree::
+    :maxdepth: 3
+    :caption: Examples
+    
+    examples/examples.rst    

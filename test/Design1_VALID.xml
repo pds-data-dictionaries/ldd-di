@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:di="http://pds.nasa.gov/pds4/mission/di/v1">
+
+    <Identification_Area>
+        <logical_identifier>urn:nasa:pds:bundle:collection:product</logical_identifier>
+        <version_id>1.0</version_id>
+        <title>Test Label for DI/EPOXI LDD</title>
+        <information_model_version>[IM_VERSION]</information_model_version>
+        <product_class>Product_Observational</product_class>
+    </Identification_Area>
+
+    <Observation_Area>
+        <Time_Coordinates>
+            <start_date_time xsi:nil="true" nilReason="inapplicable"/>
+            <stop_date_time xsi:nil="true" nilReason="inapplicable"/>
+        </Time_Coordinates>
+
+        <Investigation_Area>
+            <name>The Deep Impact Mission</name>
+            <type>Mission</type>
+            <Internal_Reference>
+                <lid_reference>urn:nasa:pds:context:investigation:mission.deep_impact</lid_reference>
+                <reference_type>data_to_investigation</reference_type>
+            </Internal_Reference>
+        </Investigation_Area>
+        <Investigation_Area>
+            <name>The EPOXI Joint Missions</name>
+            <type>Mission</type>
+            <Internal_Reference>
+                <lid_reference>urn:nasa:pds:context:investigation:mission.epoxi</lid_reference>
+                <reference_type>data_to_investigation</reference_type>
+            </Internal_Reference>
+        </Investigation_Area>
+
+        <Observing_System>
+            <Observing_System_Component>
+                <name>The Deep Impact Flyby (DIF) Spacecraft</name>
+                <type>Host</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.dif</lid_reference>
+                    <reference_type>is_instrument_host</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>The Deep Impact Impactor (DII) Spacecraft</name>
+                <type>Host</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.dii</lid_reference>
+                    <reference_type>is_instrument_host</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>The High Resolution Instrument (HRI) Infrared Spectrometer for Deep
+                    Impact</name>
+                <type>Instrument</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:dif.hrii</lid_reference>
+                    <reference_type>is_instrument</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>The High Resolution Instrument (HRI) Visible CCD Imager for Deep Impact</name>
+                <type>Instrument</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:dif.hriv</lid_reference>
+                    <reference_type>is_instrument</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>The Medium Resolution Instrument (MRI) for Deep Impact</name>
+                <type>Instrument</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:dif.mri</lid_reference>
+                    <reference_type>is_instrument</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>The Impactor Targeting Sensor (ITS) for Deep Impact</name>
+                <type>Instrument</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:dii.its</lid_reference>
+                    <reference_type>is_instrument</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+        </Observing_System>
+        <Target_Identification>
+            <name>None</name>
+            <type>Comet</type>
+        </Target_Identification>
+
+        <Mission_Area>
+            <di:Mission_Parameters>
+                <di:mission_phase_name>9P Encounter</di:mission_phase_name>   <!-- msn:mission_phase_name -->
+                <di:spacecraft_clock_start>1/0168249634.240</di:spacecraft_clock_start>
+                <di:spacecraft_clock_mid>1/0168249644.240</di:spacecraft_clock_mid>
+                <di:spacecraft_clock_stop>1/0168249654.240</di:spacecraft_clock_stop>
+
+                <di:Observation_Parameters>
+                    <di:observation_id>5000100</di:observation_id>
+                    <di:observation_description>EIGHT-FILTER SET</di:observation_description> <!-- OPTIONAL -->
+                    <di:mission_activity>DAILY SCIENCE IMAGING</di:mission_activity>
+                    <di:product_type>Radiance Cleaned</di:product_type>
+                    <di:spacecraft_processor_id>SCU-A</di:spacecraft_processor_id>
+                    <di:sdc_pipeline_file_name>HV0168249644_5000100_001_R.FIT</di:sdc_pipeline_file_name> <!-- Not in raw data -->
+                
+                    <di:Imaging>
+                        <di:image_number>1</di:image_number> <!-- Values have leading zeroes in raw data -->
+                        <di:commanded_image_count>1</di:commanded_image_count>
+                        <di:image_compression_history>Uncompressed</di:image_compression_history>
+                    </di:Imaging>
+
+                    <di:Geometry>
+                        <!-- <di:pointing_description/>  only used in EPOXI phases -->
+                        <di:geometry_quality>OK</di:geometry_quality>  <!-- Not in raw data -->
+                        <di:Spacecraft_Rotation_Velocity_Vector>
+                            <di:x_axis_rotation unit="rad/s">8.507742089260e-07</di:x_axis_rotation>
+                            <di:y_axis_rotation unit="rad/s">-7.153337842190e-07</di:y_axis_rotation>
+                            <di:z_axis_rotation unit="rad/s">-1.070940584230e-06</di:z_axis_rotation>
+                        </di:Spacecraft_Rotation_Velocity_Vector>
+                    </di:Geometry>
+                </di:Observation_Parameters>
+
+                <di:Instrument_Parameters>
+                    <di:instrument_mode>Sub-Frame 2 (shuttered)</di:instrument_mode>    <!-- from AICD - not in raw data but can be translated from mnemonic -->
+                    <di:instrument_mode_mnemonic>SF2S</di:instrument_mode_mnemonic> <!-- from AICD -->
+                    <di:instrument_mode_id>3</di:instrument_mode_id> 
+                
+                    <di:Instrument_Temperatures>
+                        <di:Temperature_Measurement>
+                            <di:sensor_location>INSTRUMENT CONTROLLER PROCESSING BOARD</di:sensor_location>
+                            <di:temperature unit="K">307.8015840 </di:temperature>
+                        </di:Temperature_Measurement>
+                        <di:Temperature_Measurement>
+                            <di:sensor_location>CCD SIGNAL PROCESSING BOARD</di:sensor_location>
+                            <di:temperature unit="K">307.7280480 </di:temperature>
+                        </di:Temperature_Measurement>
+                        <di:Temperature_Measurement>
+                            <di:sensor_location>IR SIGNAL PROCESSING BOARD</di:sensor_location>
+                            <di:temperature unit="K">300.5215200 </di:temperature>
+                        </di:Temperature_Measurement>
+                        <di:Temperature_Measurement>
+                            <di:sensor_location>LVPS SIGNAL PROCESSING BOARD</di:sensor_location>
+                            <di:temperature unit="K">306.0734880 </di:temperature>
+                        </di:Temperature_Measurement>
+                        <di:Temperature_Measurement>
+                            <di:sensor_location>CCD PREAMP BOX</di:sensor_location>
+                            <di:temperature unit="K">275.7766560 </di:temperature>
+                        </di:Temperature_Measurement>
+                        <di:Temperature_Measurement>
+                            <di:sensor_location>CCD ON-CHIP SENSOR</di:sensor_location>
+                            <di:temperature unit="K">168.7997822 </di:temperature>
+                        </di:Temperature_Measurement>
+                        <di:Temperature_Measurement>
+                            <di:sensor_location>PRISMS</di:sensor_location>
+                            <di:temperature unit="K">141.2512673 </di:temperature>
+                        </di:Temperature_Measurement>
+                        <di:Temperature_Measurement>
+                            <di:sensor_location>PRIMARY MIRROR</di:sensor_location>
+                            <di:temperature unit="K">140.1253230 </di:temperature>
+                        </di:Temperature_Measurement>
+                        <di:Temperature_Measurement>
+                            <di:sensor_location>SECONDARY MIRROR</di:sensor_location>
+                            <di:temperature unit="K">133.1598312 </di:temperature>
+                        </di:Temperature_Measurement>
+                        <di:Temperature_Measurement>
+                            <di:sensor_location>SPECTRAL IMAGING MODULE COVER</di:sensor_location>
+                            <di:temperature unit="K">141.3565908 </di:temperature>
+                        </di:Temperature_Measurement>
+                        <di:Temperature_Measurement>
+                            <di:sensor_location>IR FPA ON-CHIP SENSOR</di:sensor_location>
+                            <di:temperature unit="K">85.2455000 </di:temperature>
+                        </di:Temperature_Measurement>
+                    </di:Instrument_Temperatures>
+
+                    <di:Instrument_Voltages>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>CCD OFFSET FROM ADC REF QUAD A</di:sensor_location>
+                            <di:voltage unit="V">1.2067857 </di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>CCD OFFSET FROM ADC REF QUAD B</di:sensor_location>
+                            <di:voltage unit="V">1.2128898 </di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>CCD OFFSET FROM ADC REF QUAD C</di:sensor_location>
+                            <di:voltage unit="V">1.2046493 </di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>CCD OFFSET FROM ADC REF QUAD D</di:sensor_location>
+                            <di:voltage unit="V">1.2165523 </di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>CCD OUTPUT AMP DRAIN QUAD A</di:sensor_location>
+                            <di:voltage unit="V">5.1233263 </di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>CCD OUTPUT AMP DRAIN QUAD B</di:sensor_location>
+                            <di:voltage unit="V">5.1249156 </di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>CCD OUTPUT AMP DRAIN QUAD C</di:sensor_location>
+                            <di:voltage unit="V">5.1106113 </di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>CCD OUTPUT AMP DRAIN QUAD D</di:sensor_location>
+                            <di:voltage unit="V">5.1074326 </di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>CCD SERIAL CLOCK POSITIVE</di:sensor_location>
+                            <di:voltage unit="V">5.0335270 </di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>CCD SERIAL CLOCK NEGATIVE</di:sensor_location>
+                            <di:voltage unit="V">-5.0247855</di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>CCD PARALLEL CLOCK POSITIVE</di:sensor_location>
+                            <di:voltage unit="V">5.0096865 </di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>CCD PARALLEL CLOCK NEGATIVE</di:sensor_location>
+                            <di:voltage unit="V">-9.2051899</di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>IR RESET</di:sensor_location>
+                            <di:voltage unit="V">0.2445991 </di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>IR SUBSTRATE</di:sensor_location>
+                            <di:voltage unit="V">0.7411353 </di:voltage>
+                        </di:Voltage_Measurement>
+                        <di:Voltage_Measurement>
+                            <di:sensor_location>IR BIASGATE</di:sensor_location>
+                            <di:voltage unit="V">3.4048198 </di:voltage>
+                        </di:Voltage_Measurement>
+                    </di:Instrument_Voltages>
+                </di:Instrument_Parameters>
+
+                <di:Image_Statistics>
+                    <di:bad_pixel_count>512</di:bad_pixel_count>
+                    <di:missing_pixel_count>50</di:missing_pixel_count>
+                    <di:despiked_pixel_count>0</di:despiked_pixel_count>
+                    <di:interpolated_pixel_count>496</di:interpolated_pixel_count>
+                    <di:partial_saturated_pixel_count>459</di:partial_saturated_pixel_count>
+                    <di:saturated_pixel_count>447</di:saturated_pixel_count>
+                    <di:adc_saturated_pixel_count>446</di:adc_saturated_pixel_count>
+                    <di:ultracompressed_pixel_count>0</di:ultracompressed_pixel_count>   
+                <!-- Only present when data are scaled/offset (i.e., derived_min/max/med)? In epoxi non-comet raw data -->
+                    <di:scaled_maximum/>  
+                    <di:scaled_minimum/>
+                    <di:scaled_median/>
+                    <di:scaled_standard_deviation/>
+                <!-- Only present in calibrated data -->
+                    <di:stored_maximum>7.61000000000e-03</di:stored_maximum>   <!-- = EPOXI:MAXMIMUM in label -->
+                    <di:stored_minimum>-1.41700000000e-04</di:stored_minimum>
+                    <di:stored_median>1.63000000000e-05</di:stored_median>
+                    <di:stored_standard_deviation>1.00200000000e-04</di:stored_standard_deviation>
+
+                    <!-- Only in exoplanet observations -->
+                    <di:Conversion_Constants>
+                        <di:data_to_calibrated_dn_multiplier/> 
+                        <di:data_to_ioverf_multiplier/>
+                        <di:data_to_radiance_multiplier/>
+                    </di:Conversion_Constants>
+                </di:Image_Statistics>
+            </di:Mission_Parameters>
+        </Mission_Area>
+    </Observation_Area>
+
+    <File_Area_Observational>
+        <File>
+            <file_name>No.Data</file_name>
+        </File>
+        <Array_1D>
+            <offset unit="byte">0</offset>
+            <axes>1</axes>
+            <axis_index_order>Last Index Fastest</axis_index_order>
+            <Element_Array>
+                <data_type>IEEE754MSBSingle</data_type>
+            </Element_Array>
+            <Axis_Array>
+                <axis_name>Sample</axis_name>
+                <elements>1</elements>
+                <sequence_number>1</sequence_number>
+            </Axis_Array>
+        </Array_1D>
+    </File_Area_Observational>
+</Product_Observational>
