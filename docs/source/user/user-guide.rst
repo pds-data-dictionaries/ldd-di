@@ -4,7 +4,7 @@
 Introduction
 ##################################################
 
-This *User;s Guide* provides a brief overview of the Deep Impact and EPOXI mission
+This *User's Guide* provides a brief overview of the Deep Impact and EPOXI mission
 namespace, identified by "DI" or "di:", for those working with data from either
 the Deep Impact (DI) primary or EPOXI extended missions.
 
