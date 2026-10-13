@@ -57,15 +57,12 @@ Top-Level Class: <di:Mission_Parameters>
 The *<di:Mission_Parameters>* class acts as a wrapper for all other DI classes.
 It contains four attributes and three subclasses. 
 
-The sequence of elements within the *<di:Mission_Parameters>* class is:
+The sequence of elements and classes within the *<di:Mission_Parameters>* class is:
 
 - :ref:`<di:mission_phase_name><mission-phase-name>`
 - :ref:`<di:spacecraft_clock_start><spacecraft-clock-start>`
 - :ref:`<di:spacecraft_clock_mid><spacecraft-clock-mid>`
 - :ref:`<di:spacecraft_clock_stop><spacecraft-clock-stop>`
-
-The major subclasses of the *<di:DeepImpact_Expoxi_Metadata>* class are:
-
 - :ref:`<di:Observation_Parameters><observation-parameters>`
 - :ref:`<di:Instrument_Parameters><instrument-parameters>`
 - :ref:`<di:Image_Statistics><image-statistics>`
@@ -95,17 +92,17 @@ Attributes of <di:Mission_Parameters>
   A string representing the onboard clock string at the midpoint of the 
   observations.
 
-.. _spacecraft_clock_stop:
+.. _spacecraft-clock-stop:
 
 <di:spacecraft_clock_stop>
   A string representing the onboard clock string at the end of the 
   observations.
 
-.. _observation-parameters
+.. _observation-parameters:
 
-**************************************************
+++++++++++++++++++++++++++++++++++++++++++++++++++
 Subclass: <di:Observation_Parameters>
-**************************************************
+++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The *<di:Observation_Parameters>* class provides attributes describing
 the intent and circumstances of the observation that produced the data in the
@@ -147,9 +144,11 @@ This class contains:
   not included in the Geometry discipline namespace. In particular, it includes
   a vector defining the rotation rate of the spacecraft.
   
-**************************************************
+.. _instrument-parameters:
+  
+++++++++++++++++++++++++++++++++++++++++++++++++++
 Subclass: <di:Instrument_Parameters>
-**************************************************
+++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The *<di:Instrument_Parameters>* subclass provides attributes specific to the
 instrument commanding and environment during the observation.
@@ -175,9 +174,11 @@ This class contains:
   This class presents a series of voltage readings from sensors in specified
   locations on the spacecraft.
   
-**************************************************
+.. _image-statistics:
+  
+++++++++++++++++++++++++++++++++++++++++++++++++++
 Subclass: <di:Image_Statistics>
-**************************************************
+++++++++++++++++++++++++++++++++++++++++++++++++++
 
 This class provides various counts, metrics and conversion constants for the 
 image contained within the primary data object.

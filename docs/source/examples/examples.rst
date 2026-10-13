@@ -4,7 +4,7 @@ Mockup Labels
 
 .. GitHub file targets (for readability):
 .. _GitHub repo: https://github.com/pds-data-dictionaries/ldd-di
-.. _Design1: https://github.com/pds-data-dictionaries/ldd-di/tree/main/test/examples/Design1_VALID.xml
+.. _Design1: https://github.com/pds-data-dictionaries/ldd-di/tree/main/test/examples/DesignLabel.xml
 
 
 Mockup labels are created during the initial design and test phase for the

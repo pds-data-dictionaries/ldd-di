@@ -16,10 +16,10 @@ when they are included in a label.
 ::
 
   <di:Mission_Parameters>
-      <di:mission_phase_name>9P Encounter</di:mission_phase_name>   <!-- msn:mission_phase_name -->
-      <di:spacecraft_clock_start>1/0168249634.240</di:spacecraft_clock_start>
-      <di:spacecraft_clock_mid>1/0168249644.240</di:spacecraft_clock_mid>
-      <di:spacecraft_clock_stop>1/0168249654.240</di:spacecraft_clock_stop>
+      <di:mission_phase_name/>
+      <di:spacecraft_clock_start/>
+      <di:spacecraft_clock_mid/>
+      <di:spacecraft_clock_stop/>
 
       <di:Observation_Parameters>
           <di:observation_id/>
