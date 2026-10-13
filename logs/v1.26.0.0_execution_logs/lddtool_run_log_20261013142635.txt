@@ -1,0 +1,41 @@
+
+>>  INFO LDDTOOL Version: 16.1.3
+>>  INFO IM Version Id: 1.26.0.0
+>>  INFO IM Namespace Id: pds
+>>  INFO IM Label Version Id: 1.0
+>>  INFO Date: Tue Oct 13 14:26:37 UTC 2026
+>>  INFO PARENT_DIR: /tmp/lddtool-16.1.3/Data/
+
+>>> INFO Init:  - Config.Properties Namespace Id Using:pds
+>>> INFO Init:  - LDD Dictionary_Type is Mission
+>>> INFO Attribute: <commanded_image_count> - The default minimum value provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <image_number> - The default minimum value provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <instrument_mode_id> - The default minimum value provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <instrument_mode_id> - The default maximum value provided by the attribute's data type is being overridden with 9
+>>> INFO Attribute: <mission_phase_name> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <observation_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <observation_id> - The default maximum characters provided by the attribute's data type is being overridden with 7
+>>> WARNING Init:  - Config.Properties Namespace Id Not Found:di
+
+ -- LDDTool Execution Summary --
+     1 warning(s)
+     0 error(s)
+     0 fatal error(s)
+
+Input:
+
+     - IM Version: 1Q00
+     - PDS4 Flag: true
+     - LDD Flag: true
+     - Export JSON Flag: true
+
+     - Ingest LDD(s): /home/runner/work/ldd-di/ldd-di/src/DI-EPOXI_IngestLDD.xml
+
+Output:
+
+     - ./PDS4_DI_1Q00_1000.xsd
+     - ./PDS4_DI_1Q00_1000.sch
+     - ./PDS4_DI_1Q00_1000.xml
+     - ./export/PDS4_PDS_1Q00.JSON
+
+>>  INFO Exit(0)
