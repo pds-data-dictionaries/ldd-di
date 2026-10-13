@@ -1,0 +1,70 @@
+
+PDS Validate Tool Report
+
+Configuration:
+   Version      5.0.0
+   Date         2026-10-13T20:08:30Z
+   CLI args     -R pds4.label --skip-content-validation -x /home/runner/work/ldd-di/ldd-di/build/development/8d37e2ab111190ea0479400fab2eb15e998dde69/1.26.0.0/PDS4_DI_1Q00_1000.xsd /tmp/PDS4_PDS_1Q00.xsd -S /home/runner/work/ldd-di/ldd-di/build/development/8d37e2ab111190ea0479400fab2eb15e998dde69/1.26.0.0/PDS4_DI_1Q00_1000.sch /tmp/PDS4_PDS_1Q00.sch -t /home/runner/work/ldd-di/ldd-di/test//Design1_VALID.xml
+
+Parameters:
+   Targets                        [file:/home/runner/work/ldd-di/ldd-di/test/Design1_VALID.xml]
+   Rule Type                      pds4.label
+   User Specified Schemas         [file:/home/runner/work/ldd-di/ldd-di/build/development/8d37e2ab111190ea0479400fab2eb15e998dde69/1.26.0.0/PDS4_DI_1Q00_1000.xsd, file:/tmp/PDS4_PDS_1Q00.xsd]
+   User Specified Schematrons     [file:/home/runner/work/ldd-di/ldd-di/build/development/8d37e2ab111190ea0479400fab2eb15e998dde69/1.26.0.0/PDS4_DI_1Q00_1000.sch, file:/tmp/PDS4_PDS_1Q00.sch]
+   Severity Level                 WARNING
+   Recurse Directories            true
+   File Filters Used              [*.xml, *.XML]
+   Data Content Validation        off
+   Product Level Validation       on
+   Max Errors                     100000
+   Registered Contexts File       /tmp/validate-5.0.0/resources/registered_context_products.json
+
+
+
+Product Level Validation Results
+
+  FAIL: file:/home/runner/work/ldd-di/ldd-di/test/Design1_VALID.xml (urn:nasa:pds:bundle:collection:product::1.0)
+      WARNING  [warning.label.schema]   Cannot check versioning because no Schema given.
+      ERROR  [error.label.schema]   line 252, 41: cvc-pattern-valid: Value '' is not facet-valid with respect to pattern '(\+|-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|-)?[0-9]+)?|[^aFIN,]* ' for type 'scaled_maximum'.
+      ERROR  [error.label.schema]   line 252, 41: cvc-type.3.1.3: The value '' of element 'di:scaled_maximum' is not valid.
+      ERROR  [error.label.schema]   line 253, 41: cvc-pattern-valid: Value '' is not facet-valid with respect to pattern '(\+|-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|-)?[0-9]+)?|[^aFIN,]* ' for type 'scaled_minimum'.
+      ERROR  [error.label.schema]   line 253, 41: cvc-type.3.1.3: The value '' of element 'di:scaled_minimum' is not valid.
+      ERROR  [error.label.schema]   line 254, 40: cvc-pattern-valid: Value '' is not facet-valid with respect to pattern '(\+|-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|-)?[0-9]+)?|[^aFIN,]* ' for type 'scaled_median'.
+      ERROR  [error.label.schema]   line 254, 40: cvc-type.3.1.3: The value '' of element 'di:scaled_median' is not valid.
+      ERROR  [error.label.schema]   line 255, 52: cvc-pattern-valid: Value '' is not facet-valid with respect to pattern '(\+|-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|-)?[0-9]+)?|[^aFIN,]* ' for type 'scaled_standard_deviation'.
+      ERROR  [error.label.schema]   line 255, 52: cvc-type.3.1.3: The value '' of element 'di:scaled_standard_deviation' is not valid.
+      ERROR  [error.label.schema]   line 264, 63: cvc-pattern-valid: Value '' is not facet-valid with respect to pattern '(\+|-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|-)?[0-9]+)?|[^aFIN,]* ' for type 'data_to_calibrated_dn_multiplier'.
+      ERROR  [error.label.schema]   line 264, 63: cvc-type.3.1.3: The value '' of element 'di:data_to_calibrated_dn_multiplier' is not valid.
+      ERROR  [error.label.schema]   line 265, 56: cvc-pattern-valid: Value '' is not facet-valid with respect to pattern '(\+|-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|-)?[0-9]+)?|[^aFIN,]* ' for type 'data_to_ioverf_multiplier'.
+      ERROR  [error.label.schema]   line 265, 56: cvc-type.3.1.3: The value '' of element 'di:data_to_ioverf_multiplier' is not valid.
+      ERROR  [error.label.schema]   line 266, 58: cvc-pattern-valid: Value '' is not facet-valid with respect to pattern '(\+|-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|-)?[0-9]+)?|[^aFIN,]* ' for type 'data_to_radiance_multiplier'.
+      ERROR  [error.label.schema]   line 266, 58: cvc-type.3.1.3: The value '' of element 'di:data_to_radiance_multiplier' is not valid.
+      WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
+        1 product validation(s) completed
+
+Summary:
+
+  1 product(s)
+  14 error(s)
+  2 warning(s)
+
+  Product Validation Summary:
+    0          product(s) passed
+    1          product(s) failed
+    0          product(s) skipped
+    1          product(s) total
+
+  Referential Integrity Check Summary:
+    0          check(s) passed
+    0          check(s) failed
+    0          check(s) skipped
+    0          check(s) total
+
+  Message Types:
+    14           error.label.schema
+    1            warning.label.missing_schematron_spec
+    1            warning.label.schema
+
+End of Report
+Completed execution in 3519 ms
+
