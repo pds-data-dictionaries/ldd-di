@@ -262,8 +262,8 @@
                     <!-- Only in exoplanet observations -->
                     <di:Conversion_Constants>
                         <di:data_to_calibrated_dn_multiplier>425536.17</di:data_to_calibrated_dn_multiplier>
-                        <di:data_to_ioverf_multiplier/>85464072000.0</di:data_to_ioverf_multiplier/>
-                        <di:data_to_radiance_multiplier/>1.0</di:data_to_radiance_multiplier/>
+                        <di:data_to_ioverf_multiplier>85464072000.0</di:data_to_ioverf_multiplier>
+                        <di:data_to_radiance_multiplier>1.0</di:data_to_radiance_multiplier>
                     </di:Conversion_Constants>
                 </di:Image_Statistics>
             </di:Mission_Parameters>
