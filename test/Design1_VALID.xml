@@ -250,8 +250,8 @@
                     <di:ultracompressed_pixel_count>0</di:ultracompressed_pixel_count>   
                 <!-- Only present when data are scaled/offset (i.e., derived_min/max/med)? In epoxi non-comet raw data -->
                     <di:scaled_maximum>761.0</di:scaled_maximum>  
-                    <di:scaled_minimum/>-141.7</di:scaled_minimum>
-                    <di:scaled_median/>163</di:scaled_median>
+                    <di:scaled_minimum>-141.7</di:scaled_minimum>
+                    <di:scaled_median>163</di:scaled_median>
                     <di:scaled_standard_deviation>100.2</di:scaled_standard_deviation>
                 <!-- Only present in calibrated data -->
                     <di:stored_maximum>7.61000000000e-03</di:stored_maximum>   <!-- = EPOXI:MAXMIMUM in label -->
