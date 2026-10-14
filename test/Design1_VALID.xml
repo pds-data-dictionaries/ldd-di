@@ -249,10 +249,10 @@
                     <di:adc_saturated_pixel_count>446</di:adc_saturated_pixel_count>
                     <di:ultracompressed_pixel_count>0</di:ultracompressed_pixel_count>   
                 <!-- Only present when data are scaled/offset (i.e., derived_min/max/med)? In epoxi non-comet raw data -->
-                    <di:scaled_maximum/>  
-                    <di:scaled_minimum/>
-                    <di:scaled_median/>
-                    <di:scaled_standard_deviation/>
+                    <di:scaled_maximum>761.0</di:scaled_maximum>  
+                    <di:scaled_minimum/>-141.7</di:scaled_minimum>
+                    <di:scaled_median/>163</di:scaled_median>
+                    <di:scaled_standard_deviation>100.2</di:scaled_standard_deviation>
                 <!-- Only present in calibrated data -->
                     <di:stored_maximum>7.61000000000e-03</di:stored_maximum>   <!-- = EPOXI:MAXMIMUM in label -->
                     <di:stored_minimum>-1.41700000000e-04</di:stored_minimum>
@@ -261,9 +261,9 @@
 
                     <!-- Only in exoplanet observations -->
                     <di:Conversion_Constants>
-                        <di:data_to_calibrated_dn_multiplier/> 
-                        <di:data_to_ioverf_multiplier/>
-                        <di:data_to_radiance_multiplier/>
+                        <di:data_to_calibrated_dn_multiplier>425536.17</di:data_to_calibrated_dn_multiplier>
+                        <di:data_to_ioverf_multiplier/>85464072000.0</di:data_to_ioverf_multiplier/>
+                        <di:data_to_radiance_multiplier/>1.0</di:data_to_radiance_multiplier/>
                     </di:Conversion_Constants>
                 </di:Image_Statistics>
             </di:Mission_Parameters>
