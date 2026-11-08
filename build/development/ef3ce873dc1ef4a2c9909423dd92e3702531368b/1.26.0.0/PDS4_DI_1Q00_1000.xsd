@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- PDS4 XML/Schema for Name Space Id:di  Version:1.0.0.0 - Sun Nov 08 19:02:57 UTC 2026 -->
+  <!-- Generated from the PDS4 Information Model Version 1.26.0.0 - System Build 16.1	 -->
+  <!-- *** This PDS4 product schema is an operational deliverable. *** -->
+  <!--                                                                           -->
+  <!--               Dictionary Stack                                            -->
+  <!-- 1.26.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.0.0.0 - di: - Deep Impact and EPOXI Missions Dictionary                 -->
+  <!--                                                                           -->
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://pds.nasa.gov/pds4/mission/di/v1"
+    xmlns:di="http://pds.nasa.gov/pds4/mission/di/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="1.0.0.0">
+ 
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1Q00.xsd"/>
+ 
+  <xs:annotation>
+    <xs:documentation>
+
+        Created as part of the PDS3 to PDS4 conversion of the Deep Impact, 
+        EPOCh, and DIXI mission archives.
+    
+    </xs:documentation>
+  </xs:annotation>
+ 
+  <xs:element name="Mission_Parameters" type="di:Mission_Parameters"> </xs:element>
+
+  <xs:complexType name="Conversion_Constants">
+    <xs:annotation>
+      <xs:documentation> The di:Conversion_Constants class provides
+        multiplicative constants for transforming pixel values in the
+        associated image from their current units to other units.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="data_to_calibrated_dn_multiplier" type="di:data_to_calibrated_dn_multiplier" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="data_to_ioverf_multiplier" type="di:data_to_ioverf_multiplier" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="data_to_radiance_multiplier" type="di:data_to_radiance_multiplier" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Geometry">
+    <xs:annotation>
+      <xs:documentation> The di:Geometry class provides additional
+        geometry information not accommodated by the Geometry discipline
+        namespace. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="pointing_description" type="di:pointing_description" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="geometry_quality" type="di:geometry_quality" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Spacecraft_Rotation_Velocity_Vector" type="di:Spacecraft_Rotation_Velocity_Vector" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="di:geometry_quality = ('BAD', 'OK')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Image_Statistics">
+    <xs:annotation>
+      <xs:documentation> The di:Image_Statistics class provides various
+        counts, metrics and conversion constants for the image contained
+        within the primary data object. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="bad_pixel_count" type="di:bad_pixel_count" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="missing_pixel_count" type="di:missing_pixel_count" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="despiked_pixel_count" type="di:despiked_pixel_count" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="interpolated_pixel_count" type="di:interpolated_pixel_count" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="partial_saturated_pixel_count" type="di:partial_saturated_pixel_count" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="saturated_pixel_count" type="di:saturated_pixel_count" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="adc_saturated_pixel_count" type="di:adc_saturated_pixel_count" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="ultracompressed_pixel_count" type="di:ultracompressed_pixel_count" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="scaled_maximum" type="di:scaled_maximum" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="scaled_minimum" type="di:scaled_minimum" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="scaled_median" type="di:scaled_median" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="scaled_standard_deviation" type="di:scaled_standard_deviation" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="stored_maximum" type="di:stored_maximum" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="stored_minimum" type="di:stored_minimum" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="stored_median" type="di:stored_median" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="stored_standard_deviation" type="di:stored_standard_deviation" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Conversion_Constants" type="di:Conversion_Constants" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Imaging">
+    <xs:annotation>
+      <xs:documentation> The di:Imaging class contains attributes
+        related to the sequence that produced the data comprising the
+        product observation. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="image_number" type="di:image_number" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="commanded_image_count" type="di:commanded_image_count" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="image_compression_history" type="di:image_compression_history" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="di:image_compression_history = ('Compressed', 'Decompressed', 'Uncompressed')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Instrument_Parameters">
+    <xs:annotation>
+      <xs:documentation> The di:Instrument_Parameters class provides
+        attributes specific to instrument settings and environment.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="instrument_mode" type="di:instrument_mode" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="instrument_mode_mnemonic" type="di:instrument_mode_mnemonic" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="instrument_mode_id" type="di:instrument_mode_id" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="Instrument_Temperatures" type="di:Instrument_Temperatures" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="Instrument_Voltages" type="di:Instrument_Voltages" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="di:instrument_mode = ('Alternating Binned Full Frame', 'Binned Full Frame', 'Binned Sub-Frame 2', 'Binned Sub_Frame 1', 'Diagnostic (shuttered)', 'Diagnostic: One reset frame followed by a read frame', 'Full Frame (shuttered)', 'Memory Check', 'Sub-Frame 1 (shuttered)', 'Sub-Frame 2 (shuttered)', 'Sub-Frame 2 (unshuttered)', 'Sub-Frame 3 (shuttered)', 'Sub-Frame 3 (unshuttered)', 'Sub-Frame 4 (unshuttered), no parallel overclock row', 'Sub-Frame 4 (unshuttered), one parallel overclock row', 'Un-binned Full Frame')"/> -->
+    <!-- <xs:assert test="di:instrument_mode_mnemonic = ('ALTFF', 'BINFF', 'BINSF1', 'BINSF2', 'DIAG', 'FF', 'FFD', 'MEMCHK', 'SF1', 'SF2N', 'SF2S', 'SF3N', 'SF3S', 'SF4NO', 'SF4O', 'UBFF')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Instrument_Temperatures">
+    <xs:annotation>
+      <xs:documentation> The di:Instrument_Temperatures class contains a
+        list of reported temperature measurements from specific sensors
+        located in various places in the spacecraft hardware.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Temperature_Measurement" type="di:Temperature_Measurement" minOccurs="1" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Instrument_Voltages">
+    <xs:annotation>
+      <xs:documentation> The di:Instrument_Voltages class contains a
+        list of reported voltage measurements from specific sensors
+        located in various places in the spacecraft hardware.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Voltage_Measurement" type="di:Voltage_Measurement" minOccurs="1" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Mission_Parameters">
+    <xs:annotation>
+      <xs:documentation> The di:Mission_Parameters class is the
+        container class for the subclasses comprising the namespace
+        shared by the Deep Impact and EPOXI missions. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="mission_phase_name" type="di:mission_phase_name" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_start" type="di:spacecraft_clock_start" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_mid" type="di:spacecraft_clock_mid" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_stop" type="di:spacecraft_clock_stop" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="Observation_Parameters" type="di:Observation_Parameters" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="Instrument_Parameters" type="di:Instrument_Parameters" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="Image_Statistics" type="di:Image_Statistics" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Observation_Parameters">
+    <xs:annotation>
+      <xs:documentation> The di:Observation_Parameters class contains
+        details specific to the observations comprising the data
+        product, including planning and commanding attributes, and
+        additional pointing information not covered by the Geometry
+        discipline classes. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="observation_id" type="di:observation_id" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="observation_description" type="di:observation_description" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mission_activity" type="di:mission_activity" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="product_type" type="di:product_type" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_processor_id" type="di:spacecraft_processor_id" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="sdc_pipeline_file_name" type="di:sdc_pipeline_file_name" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="Imaging" type="di:Imaging" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Geometry" type="di:Geometry" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="di:product_type = ('Edited Data Record', 'Radiance Cleaned', 'Radiance Reversible')"/> -->
+    <!-- <xs:assert test="di:spacecraft_processor_id = ('SCU-A', 'SCU-B')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Spacecraft_Rotation_Velocity_Vector">
+    <xs:annotation>
+<xs:documentation> TBD: Waiting on response </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="x_axis_rotation" type="di:x_axis_rotation" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="y_axis_rotation" type="di:y_axis_rotation" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="z_axis_rotation" type="di:z_axis_rotation" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Temperature_Measurement">
+    <xs:annotation>
+      <xs:documentation> The di:Temperature_Measurement class reports a
+        single temperature reading by a specific sensor.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="sensor_location" type="di:sensor_location" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="temperature" type="di:temperature" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Voltage_Measurement">
+    <xs:annotation>
+      <xs:documentation> The di:Voltage_Measurement class reports a
+        single voltage reading by a specific sensor. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="sensor_location" type="di:sensor_location" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="voltage" type="di:voltage" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+    <xs:annotation>
+      <xs:documentation>This section contains the simpleTypes that provide more constraints
+        than those at the base data type level. The simpleTypes defined here build on the base data
+        types. This is another component of the common dictionary and therefore falls within the
+        common namespace.
+      </xs:documentation>
+    </xs:annotation>
+
+  <xs:simpleType name="adc_saturated_pixel_count">
+    <xs:annotation>
+      <xs:documentation> The di:adc_saturated_pixel_count provides a
+        count of the number of pixels where the analog-to-digital
+        converter (ADC) was saturated. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bad_pixel_count">
+    <xs:annotation>
+      <xs:documentation> The di:bad_pixel_count attribute provides a
+        count of the number of bad pixels as identified by the Deep
+        Impact calibration process. This count includes any VIS
+        overclock pixels or IR reference pixels at the borders of the
+        image. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="commanded_image_count">
+    <xs:annotation>
+      <xs:documentation> The di:commanded_image_count provides the
+        number of images intended to be acquired acquired by the imaging
+        command that resulted in the associated data product.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="1"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="data_to_calibrated_dn_multiplier">
+    <xs:annotation>
+      <xs:documentation> The di:data_to_calibrated_dn_multipler provides
+        the scaling factor for converting the image data from the
+        currently specified unit to calibrated data numbers (DN), before
+        the conversion to radiance units. A value of 1 indicates the
+        current image is already in units of raw data number.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="data_to_ioverf_multiplier">
+    <xs:annotation>
+      <xs:documentation> The di:data_to_ioverf_multiplier provides the
+        scaling factor for converting the image data from the currently
+        specified unit to unitless I-over-F data. A value of 1 indicates
+        the current image is already in units of I-over-F.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="data_to_radiance_multiplier">
+    <xs:annotation>
+      <xs:documentation> The di:data_to_radiance_multiplier provides the
+        scaling factor for converting the image data from the currently
+        specified unit to radiance data, W/(m**2*micron*sr). A value of
+        1 indicates the current image is already in units of radiance.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="despiked_pixel_count">
+    <xs:annotation>
+      <xs:documentation> The di:despiked_pixel_count provides a count of
+        the number of pixels that were modified by the despiking routine
+        in the calibration pipeline. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="geometry_quality">
+    <xs:annotation>
+      <xs:documentation> The di:geometry_quality_flag indicates the
+        quality of the calculated geometric parameters. A value of BAD
+        indicates some or all values could not be calculated or the
+        values may not be accurate and should be used with caution.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="image_compression_history">
+    <xs:annotation>
+      <xs:documentation> The di:image_compression_history attribute
+        indicates whether the associated iamge data were compressed
+        aboard the spacecraft, and if so, whether they are still in that
+        compressed state. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="image_number">
+    <xs:annotation>
+      <xs:documentation> The di:image_number provides the sequential
+        number for an image within an observation. For EPOXI data,
+        multiple images could have been associated with a single
+        di:observation_id. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="1"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="instrument_mode">
+    <xs:annotation>
+      <xs:documentation> The di:instrument_mode attribute provides the
+        human-readable expansion of the di:instrument_mode_mnemonic
+        field, and corresponds to the di:instrument_mode_id for the
+        particular instrument. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="instrument_mode_id">
+    <xs:annotation>
+      <xs:documentation> The di:instrument_mode_id is a number
+        indicating the operating mode of the instrument during the
+        associated observation. It corresponds to the
+        instrument_mode_mnemonic and the instrument_mode. Instrument
+        modes for the CCD instruments (HRIV, MRI, and ITS) are all the
+        same. The HRII spectrometer has its own set of modes.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="1"/>
+     <xs:maxInclusive value="9"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="instrument_mode_mnemonic">
+    <xs:annotation>
+      <xs:documentation> The di:instrument_mode_mnemonic corresponds to
+        the di:instrument_mode_id and the di:instrument_mode, which
+        should also be present. The CCD instruments (HTIV, MRI, and ITS)
+        all use the same set of mode IDs, mnemonics, and names. The HRII
+        spectrometer has its own set. The instrument modes were
+        identical for primary and extended missions. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="interpolated_pixel_count">
+    <xs:annotation>
+      <xs:documentation> The di:interpolated_pixel_count provides a
+        count of the number of pixels that were reclaimed, in the
+        calibration pipeline, by interpolating from the values of
+        neighgboring good pixels. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="missing_pixel_count">
+    <xs:annotation>
+      <xs:documentation> The di:missing_pixel_count provides a count of
+        the number of pixels that were not received from the spacecraft
+        and pixels that are the image header bytes. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mission_activity">
+    <xs:annotation>
+      <xs:documentation> The di:mission_activity attribute provides a
+        human-readable tag for the context of an observation (for
+        example, "Daily Science Imaging"). </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mission_phase_name">
+    <xs:annotation>
+      <xs:documentation> The di:mission_phase_name is the name of a
+        specific mission phase, as defined in the mission documentation.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="observation_description">
+    <xs:annotation>
+      <xs:documentation> The di:observation_description provides a
+        brief, human-readable description elucidating the
+        di:observation_id value. This corresponds to the PDS3 keyword
+        OBSERVATION_TYPE. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="observation_id">
+    <xs:annotation>
+      <xs:documentation> The di:observation_id is a numeric string
+        identifying a specific calibration-related or scientific
+        observation. A single 'observation' may consist of more than one
+        image (the di:image_number provides the sequence number within
+        the observation for a specific image). In the EPOXI missions, a
+        calibration sequence was often reused, so that the same
+        observation_id might appear more than once within a data
+        collection. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="7"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="partial_saturated_pixel_count">
+    <xs:annotation>
+      <xs:documentation> The di:partial_saturated_pixel_count provides a
+        count of the number of pixels where the raw DN value is above
+        the point where some pixels have reached partial saturation. For
+        the VIS CCD instruments this point occurs at 11,000 raw DN and
+        at 8,000 raw DN for the HRII IR spectrometer. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="pointing_description">
+    <xs:annotation>
+      <xs:documentation> The di:pointing_desc provides the planned
+        spacecraft pointing as described in an imaging sequence.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="product_type">
+    <xs:annotation>
+      <xs:documentation> The di:product_type attribute provides a
+        categorization for the data product based on its state of
+        reduction. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="saturated_pixel_count">
+    <xs:annotation>
+      <xs:documentation> The di:saturated_pixel_count provides a count
+        of the number of pixels where the raw DN value is above the
+        point where some pixels have reached full-well saturation. For
+        the VIS CCD instruments this point occurs 15,000 raw DN and at
+        11,000 raw DN for the HRII IR spectrometer. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="scaled_maximum">
+    <xs:annotation>
+      <xs:documentation> The di:scaled_maximum indicates the largest
+        value occurring within the image itself after the application of
+        any scaling factor and offset. In the final DI/EPOXI pipelines,
+        pixels in the overclock areas bordering the VIS CCDs or pixels
+        in the reference rows and columns bordering the HRI IR
+        spectrometer are included in the image object but are excluded
+        from the value. Values are stated as real numbers regardless of
+        the data type of the elements of the associated image.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="scaled_median">
+    <xs:annotation>
+      <xs:documentation> The di:scaled_median provides the median value
+        (middle value) occurring in the image itself after the
+        application of any scaling factor and offset. In the final
+        DI/EPOXI pipeline, pixels in the overclock areas bordering the
+        VIS CCDs or pixels in the reference rows and columns bordering
+        the HRI IR spectrometer are included in the image object but are
+        excluded from the value. Values are stated as real numbers
+        regardless of the data type of the elements of the associated
+        image. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="scaled_minimum">
+    <xs:annotation>
+      <xs:documentation> The di:scaled_minimum indicates the smallest
+        value occurring in the image itself after the application of any
+        scaling factor and offset. In the final DI/EPOXI pipeline,
+        pixels in the overclock areas bordering the VIS CCDs or pixels
+        in the reference rows and columns bordering the HRI IR
+        spectrometer are included in the image object but are excluded
+        from the value. Values are stated as real numbers regardless of
+        the data type of the elements of the associated image.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="scaled_standard_deviation">
+    <xs:annotation>
+      <xs:documentation> The di:scaled_standard_deviation provides the
+        standard deviation occurring in the image itself after the
+        application of any scaling factor and offset. In the final
+        DI/EPOXI pipeline, pixels in the overclock areas bordering the
+        VIS CCDs or pixels in the reference rows and columns bordering
+        the HRI IR spectrometer are included in the image object but are
+        excluded from the value. Values are stated as real numbers
+        regardless of the data type of the elements of the associated
+        image. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sdc_pipeline_file_name">
+    <xs:annotation>
+      <xs:documentation> The di:sdc_pipeline_file_name provides the
+        original file name used by the EPOXI Science Data Center (SDC)
+        pipeline and typically used in publications; the project elected
+        to use shorter file names for the PDS archive. The formation
+        rule for this element is iicccccccccc_eeeeeee_nnn_rr.FIT where
+        ii identifies the instrument (HV=HRIV,HI=HRII,MV=MRI,IV=ITS),
+        cccccccccc is the spacecraft clock count at the mid-point of the
+        observation, eeeeeee is the exposure ID (OBSERVATION_ID in data
+        labels), nnn provides the sequentially increasing image number
+        within an exposure ID (IMAGE_NUMBER in the data labels), and rr
+        identifies the type of reduction (no string = raw DN, RADREV =
+        reversibly calibrated in radiance units, RAD = irreversibly
+        calibrated in radiance units, IFREV = reversibly calibrated I/F
+        (unitless), IF = irreversibly calibrated I/F (unitless).
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_File_Name">
+  <!-- format="file_name.file_extension" -->
+    	<xs:pattern value='[a-zA-Z0-9](([a-zA-Z0-9\-_.]*[a-zA-Z0-9])|)\.[a-zA-Z0-9](([a-zA-Z0-9\-_]*[a-zA-Z0-9])|)'/>
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sensor_location">
+    <xs:annotation>
+      <xs:documentation> The di:sensor_location is the string provided
+        in the original PDS3 label, which in turn was extracted from
+        comments in the FITS header of the file, that briefly describes
+        where a particular temperature or voltage sensor was located.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_mid">
+    <xs:annotation>
+      <xs:documentation> The di:spacecraft_clock_mid gives the
+        spacecraft clock reading at the midpoint of an interval. The
+        format and interpretation of the spacecraft clock string varies
+        from mission to mission. The Deep Impact Flyby spacecraft clock
+        is represented as a string of the format '1/0123456789.123'.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+    	<xs:pattern value='1\/[0-9]{10}\.[0-9]{3}'/>
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_start">
+    <xs:annotation>
+      <xs:documentation> The di:spacecraft_clock_start gives the
+        spacecraft clock reading at the beginning of an interval. The
+        format and interpretation of the spacecraft clock string varies
+        from mission to mission. The Deep Impact Flyby spacecraft clock
+        is represented as a string of the format '1/0123456789.123'.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+    	<xs:pattern value='1\/[0-9]{10}\.[0-9]{3}'/>
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_stop">
+    <xs:annotation>
+      <xs:documentation> The di:spacecraft_clock_stop gives the
+        spacecraft clock reading at the end of an interval. The format
+        and interpretation of the spacecraft clock string varies from
+        mission to mission. The Deep Impact Flyby spacecraft clock is
+        represented as a string of the format '1/0123456789.123'.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+    	<xs:pattern value='1\/[0-9]{10}\.[0-9]{3}'/>
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_processor_id">
+    <xs:annotation>
+      <xs:documentation> The di:spacecraft_processor_id attribute
+        identifies which of two onboard processors was user ti acquire
+        and record the associated observation. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="stored_maximum">
+    <xs:annotation>
+      <xs:documentation> The di:stored_maximum indicates the largest
+        value occurring within the the stored pixel values of the image
+        itself. In the final DI/EPOXI pipelines, pixels in the overclock
+        areas bordering the VIS CCDs or pixels in the reference rows and
+        columns bordering the HRI IR spectrometer are included in the
+        image object but are excluded from the value. Values are stated
+        as real numbers regardless of the data type of the elements of
+        the associated image. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="stored_median">
+    <xs:annotation>
+      <xs:documentation> The di:stored_median provides the median value
+        (middle value) occurring within the stored pixels of the image
+        itself. In the final DI/EPOXI pipeline, pixels in the overclock
+        areas bordering the VIS CCDs or pixels in the reference rows and
+        columns bordering the HRI IR spectrometer are included in the
+        image object but are excluded from the value. Values are stated
+        as real numbers regardless of the data type of the elements of
+        the associated image. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="stored_minimum">
+    <xs:annotation>
+      <xs:documentation> The di:stored_minimum indicates the smallest
+        value occurring in the stored pixels of the image itself. In the
+        final DI/EPOXI pipeline, pixels in the overclock areas bordering
+        the VIS CCDs or pixels in the reference rows and columns
+        bordering the HRI IR spectrometer are included in the image
+        object but are excluded from the value. Values are stated as
+        real numbers regardless of the data type of the elements of the
+        associated image. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="stored_standard_deviation">
+    <xs:annotation>
+      <xs:documentation> The di:stored_standard_deviation provides the
+        standard deviation of the values occurring in the stored pixels
+        of the image itself. In the final DI/EPOXI pipeline, pixels in
+        the overclock areas bordering the VIS CCDs or pixels in the
+        reference rows and columns bordering the HRI IR spectrometer are
+        included in the image object but are excluded from the value.
+        Values are stated as real numbers regardless of the data type of
+        the elements of the associated image. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="temperature_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="temperature">
+    <xs:annotation>
+      <xs:documentation> di:temperature is the temperature reported by
+        the associated sensor, indicated by the accompanying
+        di:sensor_location. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="di:temperature_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="ultracompressed_pixel_count">
+    <xs:annotation>
+      <xs:documentation> The di:ultracompressed_pixel_count provides a
+        count of the number of pixels where the raw DN is in a
+        compression bin so large that the resulting value contains very
+        little information. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="voltage_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="voltage">
+    <xs:annotation>
+      <xs:documentation> di:voltage is the voltage reported by the
+        associated sensor, indicated by the accompanying
+        di:sensor_location. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="di:voltage_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Voltage" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="x_axis_rotation_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="x_axis_rotation">
+    <xs:annotation>
+      <xs:documentation> The di:x_axis_rotation attributed provides the
+        rate of rotation about the X-axis of the spacecraft.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="di:x_axis_rotation_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angular_Velocity" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="y_axis_rotation_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="y_axis_rotation">
+    <xs:annotation>
+      <xs:documentation> The di:y_axis_rotation attributed provides the
+        rate of rotation about the Y-axis of the spacecraft.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="di:y_axis_rotation_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angular_Velocity" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="z_axis_rotation_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="z_axis_rotation">
+    <xs:annotation>
+      <xs:documentation> The di:z_axis_rotation attributed provides the
+        rate of rotation about the Z-axis of the spacecraft.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="di:z_axis_rotation_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angular_Velocity" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
