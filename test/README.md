@@ -10,9 +10,3 @@ Current Contents:
 **Design1_VALID.xml**
 
 A version of the design draft in the *examples/* subdirectory
-
-**test1_VALID.xml**
-**test1_FAIL.xml**
-
-The default test labels from the initialization of the repo. These should eventually 
-be replaced by actual tests as needed.
